@@ -15,11 +15,17 @@ app.use(bodyParser.json());
 // middleware(very important)
 
 app.use(express.json())
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use('/', express.static('dist'))
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
+  })
+
+
+  app.get('/',(req,res)=>{
+      res.json("'Hello, this is the root route!'")
   })
 
 app.use('/workers',EmployeeRouter)

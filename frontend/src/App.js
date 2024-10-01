@@ -13,7 +13,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/workers');
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/workers`);
       setWorkers(response.data)
     }
     catch (err) {
@@ -31,7 +31,7 @@ function App() {
   }
 
   const remove = async (id) => {
-    const response = await axios.delete(`http://localhost:4000/workers/${id}`)
+    const response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/workers/${id}`)
     console.log(response.data)
   }
 
@@ -42,7 +42,7 @@ function App() {
 console.log(data)
   const editData = async(e,id) =>{
     e.preventDefault()
-    const response = await axios.patch(`http://localhost:4000/workers/${id}`,data)
+    const response = await axios.patch(`${process.env.REACT_APP_BACKEND_URL}/workers/${id}`,data)
     console.log(response)
   }
 
