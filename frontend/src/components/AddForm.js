@@ -16,7 +16,7 @@ const AddForm = () => {
     const addData = async(e) => {
         e.preventDefault()
         try {
-            const response = await axios.post('http://localhost:4000/workers', data)
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/workers`, data)
             console.log(response)
         }
         catch (err) {
