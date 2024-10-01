@@ -15,12 +15,12 @@ app.use(bodyParser.json());
 // middleware(very important)
 
 app.use(express.json())
-// app.use(express.static('public'));
-app.use('/', express.static('dist'))
+app.use(express.static('public'));
+// app.use('/', express.static('dist'))
 
-app.use(cors({
-    origin: 'https://finalmern-q7as.onrender.com'
-  }));
+// app.use(cors({
+//     origin: 'https://finalmern-q7as.onrender.com'
+//   }));
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
