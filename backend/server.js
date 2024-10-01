@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 // middleware(very important)
 
 app.use(express.json())
+app.use(express.static('public'));
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)

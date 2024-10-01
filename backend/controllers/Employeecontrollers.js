@@ -21,6 +21,8 @@ const getAllWorkers = async (req, res) => {
     const workers = await EmployeeModels.find({}).sort({ createdAt: -1 })
     res.status(200).json(workers)
 
+    console.log(workers)
+
 }
 
 const getSingleWorker = async (req, res) => {
